@@ -2,7 +2,7 @@
 	name = Justin.Liu
 	email = justin.liu@hopebaytech.com
 [push]
-	default = simple
+	default = current
 [branch]
 	autosetuprebase = always
 [color]
