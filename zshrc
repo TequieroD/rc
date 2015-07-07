@@ -38,7 +38,7 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:$HOME/.rvm/bin
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 # vi key binding
 bindkey '^R' history-incremental-search-backward
@@ -168,6 +168,11 @@ return
 
 function vgdr(){
 vagrant destroy -f $1 && vagrant up $1 && vagrant ssh $1
+return
+}
+
+function t(){
+terminator -l $1 2>/dev/null &
 return
 }
 
