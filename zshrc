@@ -177,8 +177,8 @@ return
 }
 
 function sss(){
-USERNAME="hopebayadmin"
-ssh-copy-id $USERNAME@$1 2>/dev/null && ssh $USERNAME@$1 -t tmux
+U="hopebayadmin"
+ssh-copy-id $U@$1 2>/dev/null && ssh $U@$1 -t tmux
 }
 
 export NVM_DIR="~/.nvm"
