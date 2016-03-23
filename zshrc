@@ -161,7 +161,7 @@ vagrant up $1 && vagrant ssh $1
 return
 }
 
-function vgr(){
+function vgrs(){
 vagrant halt $1 && vagrant up $1 && vagrant ssh $1
 return
 }
@@ -176,3 +176,10 @@ terminator -l $1 2>/dev/null &
 return
 }
 
+function sss(){
+USERNAME="hopebayadmin"
+ssh-copy-id $USERNAME@$1 2>/dev/null && ssh $USERNAME@$1 -t tmux
+}
+
+export NVM_DIR="~/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
