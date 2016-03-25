@@ -182,10 +182,11 @@ return
 }
 
 function sss(){
-U="hopebayadmin"
-cat ~/.ssh/id_rsa.pub | ssh $U@$1 "cat >> /home/$U/.ssh/authorized_keys" && \
-ssh $U@$1 -t "sudo -u root sed -i -e 's/%sudo	ALL=(ALL:ALL) ALL/%sudo	ALL=NOPASSWD:ALL/g' /etc/sudoers" && \
-ssh $U@$1 -t sudo tmux
+SSHUSER="hopebayadmin"
+#cat ~/.ssh/id_rsa.pub | ssh $SSHUSER@$1 "cat >> /home/$SSHUSER/.ssh/authorized_keys" && \
+ssh-copy-id $U@$1 2>/dev/null && \
+ssh $SSHUSER@$1 -t "sudo -u root sed -i -e 's/%sudo	ALL=(ALL:ALL) ALL/%sudo	ALL=NOPASSWD:ALL/g' /etc/sudoers" && \
+ssh $SSHUSER@$1 -t sudo tmux
 }
 
 export NVM_DIR="~/.nvm"
