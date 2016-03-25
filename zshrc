@@ -166,6 +166,11 @@ vagrant halt $1 && vagrant up $1 && vagrant ssh $1
 return
 }
 
+function vgr(){
+vagrant halt $1 && vagrant up $1 && vagrant ssh $1
+return
+}
+
 function vgdr(){
 vagrant destroy -f $1 && vagrant up $1 && vagrant ssh $1
 return
