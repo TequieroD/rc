@@ -93,6 +93,10 @@ bindkey "\e[4~"   end-of-line              # xterm
 bindkey "^[OH" beginning-of-line           # zsh
 bindkey "^[OF" end-of-line                 # zsh
 
+# histroy-forward for down keys
+[[ -n "${key[Up]}" ]] && bindkey "${key[Up]}" history-beginning-search-backward
+[[ -n "${key[Down]}" ]] && bindkey "${key[Down]}" history-beginning-search-forward
+
 # git
 alias g='git'
 alias ga='git add'
@@ -186,6 +190,10 @@ SSHUSER="hopebayadmin"
 ssh-copy-id $SSHUSER@$1 2>/dev/null && \
 ssh $SSHUSER@$1 -t "sudo -u root sed -i -e 's/%sudo	ALL=(ALL:ALL) ALL/%sudo	ALL=NOPASSWD:ALL/g' /etc/sudoers" && \
 ssh $SSHUSER@$1 -t sudo tmux
+}
+
+function gcms(){
+git commit -m "update submodules"
 }
 
 export NVM_DIR="~/.nvm"
