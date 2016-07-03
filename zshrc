@@ -72,8 +72,13 @@ setopt no_hist_beep
 setopt inc_append_history share_history
 
 # virtualenv and virtualenvwrapper
-export VIRTUAL_ENV_DISABLE_PROMPT='1'
-export WORKON_HOME=~/Envs
+if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]
+then
+    VIRTUALENVWRAPPER_PYTHON='/usr/bin/python3'
+    source /usr/local/bin/virtualenvwrapper.sh > /dev/null 2>&1
+    export VIRTUAL_ENV_DISABLE_PROMPT='1'
+    export WORKON_HOME=~/Envs
+fi
 
 # alias
 alias -g ...='../..'
