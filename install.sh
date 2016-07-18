@@ -19,4 +19,4 @@ fi
 
 git submodule update --init
 command -v ssh-copy-id >/dev/null 2>&1 || brew install ssh-copy-id
-
+command -v sshpass >/dev/null 2>&1 || apt-get install sshpass -y
