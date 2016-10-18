@@ -44,9 +44,6 @@ export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:$HOME/bin:
 bindkey '^R' history-incremental-search-backward
 export EDITOR=vim
 
-source $ZSH/plugins/history-substring-search/history-substring-search.zsh
-bindkey '^[OA' history-substring-search-up
-
 # HISTORY
 # number of lines kept in history
 export HISTSIZE=10000
